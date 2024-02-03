@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    -ms-align-items:center;
+    min-height:100vh;
+    background-color:black; 
+}
+.border{
+    position:relative;
+    width:400px;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    -ms-align-items:center;
+    align-items:center;
+    overflow:hidden;
+    border-radius:25px;
+}
+.border::before{
+    content:'';
+    position:absolute;
+    width:170px;
+    height:150%;
+    background:linear-gradient(red,yellow,blue);
+    animation: rotate 4s linear infinite;
+}
+.border::after{
+    content:'';
+    position:absolute;
+    inset:5px;
+    background-color:#0e1538;
+    border-radius:25px;
+}
+
+ @keyframes rotate{
+    0%{
+        transform:rotate(0deg)
+    }
+    100%{
+        transform:rotate(360deg) 
+    }
+ }
